@@ -1,0 +1,44 @@
+---
+interface Props {
+  skills: string[];
+  category: string;
+}
+
+const { skills, category } = Astro.props;
+
+// Record<string, string> maps categories to specific hover classes for Tailwind
+const categoryColors: Record<string, string> = {
+  Languages:
+    'hover:border-amber-500 hover:text-amber-500 hover:shadow-[0_0_15px_#f59e0b] dark:hover:text-amber-400',
+  Frameworks:
+    'hover:border-emerald-500 hover:text-emerald-500 hover:shadow-[0_0_15px_#10b981] dark:hover:text-emerald-400',
+  'Data Bases':
+    'hover:border-blue-500 hover:text-blue-500 hover:shadow-[0_0_15px_#3b82f6] dark:hover:text-blue-400',
+  'DevOps & Infra':
+    'hover:border-red-500 hover:text-red-500 hover:shadow-[0_0_15px_#ef4444] dark:hover:text-red-400',
+  Architecture:
+    'hover:border-primary-500 hover:text-primary-500 hover:shadow-[0_0_15px_#6366f1] dark:hover:text-primary-400',
+};
+
+// Fallback to primary if the category is not specifically mapped
+const hoverClasses =
+  categoryColors[category] ||
+  'hover:border-primary-500 hover:text-primary-500 hover:shadow-[0_0_15px_#6366f1] dark:hover:text-primary-400';
+---
+
+<div class="space-y-4">
+  <h3 class="text-sm font-bold uppercase tracking-widest text-muted-foreground">
+    {category}
+  </h3>
+  <div class="flex flex-wrap gap-2">
+    {
+      skills.map((skill) => (
+        <span
+          class={`gsap-skill-badge px-3 py-1.5 rounded-lg border border-border bg-muted/50 text-foreground text-sm font-medium transition-colors duration-300 cursor-pointer inline-block ${hoverClasses}`}
+        >
+          {skill}
+        </span>
+      ))
+    }
+  </div>
+</div>

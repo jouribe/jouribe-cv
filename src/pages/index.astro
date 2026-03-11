@@ -1,17 +1,192 @@
 ---
+import ExperienceItem from '../components/ExperienceItem.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import SkillBadge from '../components/SkillBadge.astro';
+import Layout from '../layouts/Layout.astro';
 
+type Experience = {
+  company: string;
+  title: string;
+  date: string;
+  description: string[];
+  skills?: string[];
+  color?: 'blue' | 'green' | 'yellow' | 'purple' | 'default';
+};
+
+const data = {
+  name: 'Jorge O. Uribe',
+  title: 'Full-Stack Software Engineer',
+  location: 'Lima, Peru',
+  email: 'jorge@jouribe.dev',
+  phone: '+51 972 794 964',
+  github: 'https://github.com/jouribe',
+  summary:
+    'Full-Stack Software Engineer with extensive experience designing and building scalable web applications, enterprise platforms, and data-driven systems. Strong expertise in backend architecture using .NET, PHP (Laravel), and SQL databases, complemented by modern frontend frameworks and DevOps workflows.',
+  experience: [
+    {
+      company: 'Atomikal',
+      title: 'Full-Stack Developer',
+      date: 'Oct 2020 - Present',
+      description: [
+        'Developed enterprise web portals using C# and SQL Server',
+        'Built backend systems using Laravel and MariaDB',
+        'Designed REST APIs and system integrations',
+        'Optimized database performance and backend services',
+      ],
+      skills: [
+        'C#',
+        'SQL Server',
+        'Laravel',
+        'MariaDB',
+        'REST APIs',
+        'Performance Optimization',
+      ],
+      color: 'yellow',
+    },
+    {
+      company: 'Unity Automotive (USA)',
+      title: 'Software Developer',
+      date: 'Feb 2020 - Sep 2020',
+      description: [
+        'Built automation tools using .NET Core',
+        'Developed CRM and ERP backend services',
+        'Designed RESTful API integrations',
+      ],
+      skills: ['.NET Core', 'CRM/ERP', 'REST APIs', 'Automation'],
+      color: 'green',
+    },
+    {
+      company: 'Atomikal',
+      title: 'IT Director',
+      date: 'Apr 2011 - Jul 2015',
+      description: [
+        'Led development of marketing platforms and promotional websites',
+        'Delivered high-traffic campaign platforms',
+      ],
+      skills: [
+        'Team Leadership',
+        'Marketing Platforms',
+        'High-Traffic Systems',
+        'Project Management',
+      ],
+      color: 'yellow',
+    },
+    {
+      company: 'Peruvian Army Headquarters',
+      title: 'Software Developer',
+      date: 'Aug 2006 - Jun 2009',
+      description: [
+        'Developed personnel and logistics systems',
+        'Maintained enterprise backend applications',
+      ],
+      skills: [
+        'Enterprise Software',
+        'Logistics Systems',
+        'Backend Maintenance',
+      ],
+      color: 'purple',
+    },
+  ] as Experience[],
+  skills: [
+    {
+      category: 'Languages',
+      items: ['C#', 'PHP', 'JavaScript', 'TypeScript'],
+    },
+    {
+      category: 'Frameworks',
+      items: ['.NET / ASP.NET Core', 'Laravel', 'Node.js', 'Vue.js', 'Nuxt.js'],
+    },
+    {
+      category: 'Data Bases',
+      items: ['SQL Server', 'MySQL', 'PostgreSQL', 'Oracle', 'MongoDB'],
+    },
+    {
+      category: 'DevOps & Infra',
+      items: ['Docker', 'Git', 'Linux', 'CI/CD'],
+    },
+    {
+      category: 'Architecture',
+      items: ['REST APIs', 'Microservices', 'Scalable Web Platforms'],
+    },
+  ],
+  education: {
+    institution:
+      'Instituto de Ciencias de la Información - Universidad Nacional de Ingeniería',
+    degree: 'Computer Science & Informatics',
+  },
+  languages: ['Spanish (Native)', 'English (Professional Technical)'],
+};
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title={`${data.name} | ${data.title}`} description={data.summary}>
+  <main class="animate-in fade-in duration-700">
+    <Hero
+      name={data.name}
+      title={data.title}
+      location={data.location}
+      email={data.email}
+      phone={data.phone}
+      github={data.github}
+      summary={data.summary}
+    />
+
+    <Section title="Professional Experience">
+      <div
+        class="relative border-l border-gray-500/40 border-border ml-3 md:ml-4"
+      >
+        {data.experience.map((exp) => <ExperienceItem {...exp} />)}
+      </div>
+    </Section>
+
+    <Section title="Core Skills">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {
+          data.skills.map((skill) => (
+            <SkillBadge category={skill.category} skills={skill.items} />
+          ))
+        }
+      </div>
+    </Section>
+
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 container mx-auto max-w-4xl last:border-0 h-full"
+    >
+      <Section
+        title="Education"
+        className="border-r border-border border-gray-500/40 border-b-0"
+      >
+        <div>
+          <h3 class="text-xl font-bold text-foreground">
+            {data.education.degree}
+          </h3>
+          <p class="text-primary-600 dark:text-primary-400 font-medium">
+            {data.education.institution}
+          </p>
+        </div>
+      </Section>
+
+      <Section title="Languages" className="border-b-0">
+        <ul class="space-y-2">
+          {
+            data.languages.map((lang) => (
+              <li class="flex items-center gap-3 text-muted-foreground">
+                <span class="w-2 h-2 rounded-full bg-primary-500" />
+                {lang}
+              </li>
+            ))
+          }
+        </ul>
+      </Section>
+    </div>
+
+    <Footer />
+  </main>
+</Layout>
+
+<style>
+  main {
+    /* Base styles for the main container if needed */
+  }
+</style>
