@@ -4,7 +4,7 @@ import eslintConfigPrettier from 'eslint-config-prettier';
 
 export default tseslint.config(
   {
-    ignores: ['.astro/*'],
+    ignores: ['.astro/*', 'dist/*'],
   },
   ...tseslint.configs.recommended,
   ...eslintPluginAstro.configs.recommended,
