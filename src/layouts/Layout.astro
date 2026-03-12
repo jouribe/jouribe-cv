@@ -1,5 +1,9 @@
 ---
 import { SEO } from 'astro-seo';
+import {
+  GoogleTagmanager,
+  GoogleTagmanagerNoscript,
+} from '@digi4care/astro-google-tagmanager';
 
 interface Props {
   title: string;
@@ -66,10 +70,12 @@ const {
       }
       window.localStorage.setItem('theme', theme);
     </script>
+    <GoogleTagmanager id="GTM-5PFK9WH9" />
   </head>
   <body
     class="min-h-screen antialiased selection:bg-surface2 selection:text-text"
   >
+    <GoogleTagmanagerNoscript id="GTM-5PFK9WH9" />
     <div id="smooth-wrapper">
       <div id="smooth-content">
         <slot />
