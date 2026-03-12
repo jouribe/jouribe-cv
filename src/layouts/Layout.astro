@@ -13,7 +13,10 @@ const {
   image,
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://jouribe.dev');
+const canonicalURL = new URL(
+  Astro.url.pathname,
+  Astro.site || 'https://jouribe.dev',
+);
 ---
 
 <!doctype html>
@@ -83,6 +86,24 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://jouribe.
       })(window, document, 'script', 'dataLayer', 'GTM-5PFK9WH9');
     </script>
     <!-- End Google Tag Manager -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: 'Jorge O. Uribe',
+        alternateName: 'jouribe',
+        url: 'https://jouribe.dev',
+        image: 'https://jouribe.dev/profile.jpg',
+        sameAs: ['https://github.com/jouribe'],
+        jobTitle: 'Full-Stack Developer & Software Architect',
+        worksFor: {
+          '@type': 'Organization',
+          name: 'JL Labs',
+        },
+        description: description,
+      })}
+    />
   </head>
   <body
     class="min-h-screen antialiased selection:bg-surface2 selection:text-text"

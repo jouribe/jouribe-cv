@@ -15,7 +15,7 @@ const { name, title, location, email, phone, github, summary } = Astro.props;
 ---
 
 <header
-  class="relative pt-20 pb-12 overflow-hidden border-b border-gray-500/40 border-border"
+  class="relative pt-20 pb-12 overflow-hidden border-b border-gray-500/40"
 >
   <ThemeToggle />
   <div class="container mx-auto px-6 max-w-4xl relative z-10">
@@ -23,16 +23,16 @@ const { name, title, location, email, phone, github, summary } = Astro.props;
       class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8"
     >
       <div>
-        <h1
+        <div
           class="font-bebas tracking-wide text-5xl md:text-7xl font-bold text-foreground gsap-hero-title leading-none"
         >
           {name}
-        </h1>
-        <p
+        </div>
+        <h1
           class="text-xl md:text-2xl text-mauve font-medium tracking-wide gsap-hero-subtitle"
         >
           {title}
-        </p>
+        </h1>
       </div>
       <div class="flex flex-col gap-2 text-sm text-muted-foreground">
         <div class="flex items-center gap-2 gsap-hero-contact">

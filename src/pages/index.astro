@@ -126,24 +126,6 @@ const data = {
   title={`${data.name} | ${data.title}`}
   description={data.seoDescription}
 >
-  <script
-    type="application/ld+json"
-    set:html={JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'Person',
-      name: data.name,
-      alternateName: 'jouribe',
-      url: 'https://jouribe.dev',
-      image: 'https://jouribe.dev/profile.jpg',
-      sameAs: ['https://github.com/jouribe'],
-      jobTitle: 'Full-Stack Developer & Software Architect',
-      worksFor: {
-        '@type': 'Organization',
-        name: 'JL Labs',
-      },
-      description: data.seoDescription,
-    })}
-  />
   <main class="animate-in fade-in duration-700">
     <Hero
       name={data.name}
