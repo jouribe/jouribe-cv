@@ -17,13 +17,13 @@ const categoryColors: Record<string, string> = {
   'DevOps & Infra':
     'hover:border-red-500 hover:text-red-500 hover:shadow-[0_0_15px_#ef4444] dark:hover:text-red-400',
   Architecture:
-    'hover:border-primary-500 hover:text-primary-500 hover:shadow-[0_0_15px_#6366f1] dark:hover:text-primary-400',
+    'hover:border-mauve hover:text-mauve hover:shadow-[0_0_15px_var(--color-mauve)]',
 };
 
 // Fallback to primary if the category is not specifically mapped
 const hoverClasses =
   categoryColors[category] ||
-  'hover:border-primary-500 hover:text-primary-500 hover:shadow-[0_0_15px_#6366f1] dark:hover:text-primary-400';
+  'hover:border-mauve hover:text-mauve hover:shadow-[0_0_15px_var(--color-mauve)]';
 ---
 
 <div class="space-y-4">

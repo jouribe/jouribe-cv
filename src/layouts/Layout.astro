@@ -68,7 +68,7 @@ const {
     </script>
   </head>
   <body
-    class="min-h-screen antialiased selection:bg-primary-200 selection:text-primary-900 dark:selection:bg-primary-800 dark:selection:text-primary-200"
+    class="min-h-screen antialiased selection:bg-surface2 selection:text-text"
   >
     <div id="smooth-wrapper">
       <div id="smooth-content">
@@ -149,7 +149,7 @@ const {
       onEnter: (batch) =>
         gsap.from(batch, {
           opacity: 0,
-          x: -30,
+          y: 40,
           stagger: 0.15,
           duration: 0.8,
           ease: 'power2.out',

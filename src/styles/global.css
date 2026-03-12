@@ -1,48 +1,111 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-primary-50: #eef2ff;
-  --color-primary-100: #e0e7ff;
-  --color-primary-200: #c7d2fe;
-  --color-primary-300: #a5b4fc;
-  --color-primary-400: #818cf8;
-  --color-primary-500: #6366f1; /* Violet / Indigo */
-  --color-primary-600: #4f46e5;
-  --color-primary-700: #4338ca;
-  --color-primary-800: #3730a3;
-  --color-primary-900: #312e81;
-  --color-primary-950: #1e1b4b;
+  --color-rosewater: var(--rosewater);
+  --color-flamingo: var(--flamingo);
+  --color-pink: var(--pink);
+  --color-mauve: var(--mauve);
+  --color-red: var(--red);
+  --color-maroon: var(--maroon);
+  --color-peach: var(--peach);
+  --color-yellow: var(--yellow);
+  --color-green: var(--green);
+  --color-teal: var(--teal);
+  --color-sky: var(--sky);
+  --color-sapphire: var(--sapphire);
+  --color-blue: var(--blue);
+  --color-lavender: var(--lavender);
+  --color-text: var(--text);
+  --color-subtext1: var(--subtext1);
+  --color-subtext0: var(--subtext0);
+  --color-overlay2: var(--overlay2);
+  --color-overlay1: var(--overlay1);
+  --color-overlay0: var(--overlay0);
+  --color-surface2: var(--surface2);
+  --color-surface1: var(--surface1);
+  --color-surface0: var(--surface0);
+  --color-base: var(--base);
+  --color-mantle: var(--mantle);
+  --color-crust: var(--crust);
 
-  --color-surface-50: #f8fafc;
-  --color-surface-100: #f1f5f9;
-  --color-surface-200: #e2e8f0;
-  --color-surface-300: #cbd5e1;
-  --color-surface-400: #94a3b8;
-  --color-surface-500: #64748b;
-  --color-surface-600: #475569;
-  --color-surface-700: #334155;
-  --color-surface-800: #1e293b;
-  --color-surface-900: #0f172a;
-  --color-surface-950: #020617;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
 
   --font-bebas: 'Bebas Neue', sans-serif;
 }
 
 @layer base {
   :root {
-    --background: var(--color-surface-50);
-    --foreground: var(--color-surface-900);
-    --muted: var(--color-surface-100);
-    --muted-foreground: var(--color-surface-500);
-    --border: var(--color-surface-200);
+    --rosewater: #dc8a78;
+    --flamingo: #dd7878;
+    --pink: #ea76cb;
+    --mauve: #8839ef;
+    --red: #d20f39;
+    --maroon: #e64553;
+    --peach: #fe640b;
+    --yellow: #df8e1d;
+    --green: #40a02b;
+    --teal: #179299;
+    --sky: #04a5e5;
+    --sapphire: #209fb5;
+    --blue: #1e66f5;
+    --lavender: #7287fd;
+    --text: #4c4f69;
+    --subtext1: #5c5f77;
+    --subtext0: #6c6f85;
+    --overlay2: #7c7f93;
+    --overlay1: #8c8fa1;
+    --overlay0: #9ca0b0;
+    --surface2: #acb0be;
+    --surface1: #bcc0cc;
+    --surface0: #ccd0da;
+    --base: #eff1f5;
+    --mantle: #e6e9ef;
+    --crust: #dce0e8;
+
+    --background: var(--base);
+    --foreground: var(--text);
+    --muted: var(--mantle);
+    --muted-foreground: var(--subtext0);
+    --border: var(--surface0);
   }
 
   .dark {
-    --background: var(--color-surface-950);
-    --foreground: var(--color-surface-50);
-    --muted: var(--color-surface-900);
-    --muted-foreground: var(--color-surface-400);
-    --border: var(--color-surface-800);
+    --rosewater: #f5e0dc;
+    --flamingo: #f2cdcd;
+    --pink: #f5c2e7;
+    --mauve: #cba6f7;
+    --red: #f38ba8;
+    --maroon: #eba0ac;
+    --peach: #fab387;
+    --yellow: #f9e2af;
+    --green: #a6e3a1;
+    --teal: #94e2d5;
+    --sky: #89dceb;
+    --sapphire: #74c7ec;
+    --blue: #89b4fa;
+    --lavender: #b4befe;
+    --text: #cdd6f4;
+    --subtext1: #bac2de;
+    --subtext0: #a6adc8;
+    --overlay2: #9399b2;
+    --overlay1: #7f849c;
+    --overlay0: #6c7086;
+    --surface2: #585b70;
+    --surface1: #45475a;
+    --surface0: #313244;
+    --base: #1e1e2e;
+    --mantle: #181825;
+    --crust: #11111b;
+
+    --background: var(--base);
+    --foreground: var(--text);
+    --muted: var(--mantle);
+    --muted-foreground: var(--subtext0);
+    --border: var(--surface0);
   }
 
   body {

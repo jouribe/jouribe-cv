@@ -29,7 +29,7 @@ const { name, title, location, email, phone, github, summary } = Astro.props;
           {name}
         </h1>
         <p
-          class="text-xl md:text-2xl text-primary-600 dark:text-primary-400 font-medium tracking-wide gsap-hero-subtitle"
+          class="text-xl md:text-2xl text-mauve font-medium tracking-wide gsap-hero-subtitle"
         >
           {title}
         </p>
@@ -58,7 +58,7 @@ const { name, title, location, email, phone, github, summary } = Astro.props;
         </div>
         <a
           href={`mailto:${email}`}
-          class="flex items-center gap-2 hover:text-primary-500 transition-colors duration-300 gsap-hero-contact"
+          class="flex items-center gap-2 hover:text-mauve transition-colors duration-300 gsap-hero-contact"
         >
           <svg
             class="w-4 h-4"
@@ -77,7 +77,7 @@ const { name, title, location, email, phone, github, summary } = Astro.props;
         </a>
         <a
           href={`tel:${phone.replace(/\s/g, '')}`}
-          class="flex items-center gap-2 hover:text-primary-500 transition-colors duration-300 gsap-hero-contact"
+          class="flex items-center gap-2 hover:text-mauve transition-colors duration-300 gsap-hero-contact"
         >
           <svg
             class="w-4 h-4"
@@ -98,7 +98,7 @@ const { name, title, location, email, phone, github, summary } = Astro.props;
           href={github}
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center gap-2 hover:text-primary-500 transition-colors duration-300 gsap-hero-contact"
+          class="flex items-center gap-2 hover:text-mauve transition-colors duration-300 gsap-hero-contact"
         >
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
             <path
@@ -122,7 +122,7 @@ const { name, title, location, email, phone, github, summary } = Astro.props;
 
   <!-- Decorative background element -->
   <div
-    class="absolute top-0 right-0 -z-10 w-1/2 h-full bg-linear-to-l from-primary-500/20 to-transparent blur-[100px]"
+    class="absolute top-0 right-0 -z-10 w-1/2 h-full bg-linear-to-l from-mauve/20 to-transparent blur-[100px]"
   >
   </div>
 </header>

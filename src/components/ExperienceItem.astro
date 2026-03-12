@@ -5,7 +5,7 @@ interface Props {
   date: string;
   description: string[];
   skills?: string[];
-  color?: 'blue' | 'green' | 'yellow' | 'purple' | 'default';
+  color?: 'blue' | 'green' | 'yellow' | 'mauve' | 'default';
 }
 
 const {
@@ -19,29 +19,34 @@ const {
 
 const colorMap = {
   blue: {
-    dot: 'bg-blue-500',
-    text: 'text-blue-400',
-    border: 'border-blue-400/30',
+    dot: 'bg-blue',
+    text: 'text-blue',
+    border: 'border-blue/30',
+    background_hover: 'hover:bg-blue',
   },
   green: {
-    dot: 'bg-emerald-500',
-    text: 'text-emerald-400',
-    border: 'border-emerald-400/30',
+    dot: 'bg-green',
+    text: 'text-green',
+    border: 'border-green/30',
+    background_hover: 'hover:bg-green',
   },
   yellow: {
-    dot: 'bg-amber-500',
-    text: 'text-amber-400',
-    border: 'border-amber-400/30',
+    dot: 'bg-yellow',
+    text: 'text-yellow',
+    border: 'border-yellow/30',
+    background_hover: 'hover:bg-yellow',
   },
-  purple: {
-    dot: 'bg-purple-500',
-    text: 'text-purple-400',
-    border: 'border-purple-400/30',
+  mauve: {
+    dot: 'bg-mauve',
+    text: 'text-mauve',
+    border: 'border-mauve/30',
+    background_hover: 'hover:bg-mauve',
   },
   default: {
-    dot: 'bg-primary-500',
-    text: 'text-primary-400',
-    border: 'border-primary-400/30',
+    dot: 'bg-lavender',
+    text: 'text-lavender',
+    border: 'border-lavender/30',
+    background_hover: 'hover:bg-lavender',
   },
 };
 
@@ -51,15 +56,13 @@ const theme = colorMap[color] || colorMap.default;
 <div class="relative pl-8 md:pl-10 pb-12 group last:pb-0 gsap-experience-item">
   {/* The Timeline Dot */}
   <div
-    class={`absolute size-2.5 rounded-full -left-1.5 top-1.5 ring-6 ring-surface-50 dark:ring-surface-950 ring-background ${theme.dot}`}
+    class={`absolute size-2.5 rounded-full -left-1.5 top-1.5 ring-6 ring-base ${theme.dot}`}
   >
   </div>
 
   {/* Header: Date and Badge (Company) */}
   <div class="flex flex-wrap items-center gap-3 mb-2">
-    <span class="text-sm text-muted-foreground text-gray-400 font-medium"
-      >{date}</span
-    >
+    <span class="text-sm text-gray-400 font-medium">{date}</span>
     <span
       class={`font-bebas tracking-wider leading-none text-md font-semibold px-2 pt-1.5 pb-0.5 rounded border uppercase ${theme.text} ${theme.border}`}
     >
@@ -72,19 +75,19 @@ const theme = colorMap[color] || colorMap.default;
 
   {/* Description */}
   <div class="flex flex-col gap-2 text-muted-foreground mb-4">
-    {description.map((item) => <p class="text-base leading-relaxed">{item}</p>)}
+    {description.map((item) => <p class="text-text leading-relaxed">{item}</p>)}
   </div>
 
   {/* Skills */}
   {
     skills && skills.length > 0 && (
       <div class="mb-4">
-        <h4 class="text-sm font-medium text-muted-foreground text-gray-400 mb-3">
-          Skills:
-        </h4>
+        <h4 class="text-sm font-medium text-gray-400 mb-3">Skills:</h4>
         <div class="flex flex-wrap gap-2">
           {skills.map((skill) => (
-            <span class="text-xs text-muted-foreground bg-zinc-800/30 border border-zinc-700/50 px-3 pt-1.5 pb-0.5 rounded-md hover:bg-zinc-800/80 transition-colors">
+            <span
+              class={`text-xs border ${theme.text} ${theme.border} hover:text-base ${theme.background_hover} cursor-pointer px-3 py-0.5 rounded-md transition-colors`}
+            >
               {skill}
             </span>
           ))}
