@@ -55,6 +55,12 @@
       moonIcon?.classList.remove('hidden');
     }
     localStorage.setItem('theme', theme);
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'theme_change',
+      selected_theme: theme,
+    });
   };
 
   // Initialize theme icons

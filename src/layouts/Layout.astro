@@ -131,6 +131,20 @@ const canonicalURL = new URL(
   @import '../styles/global.css';
 </style>
 
+<script is:inline>
+  document.addEventListener('click', (event) => {
+    const badge = event.target.closest('.gsap-skill-badge');
+
+    if (badge) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'skill_interaction',
+        skill_name: badge.innerText.trim(),
+      });
+    }
+  });
+</script>
+
 <script>
   import { gsap } from 'gsap';
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -139,7 +153,6 @@ const canonicalURL = new URL(
 
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother, CustomEase);
 
-  // 1. Initialize ScrollSmoother FIRST
   ScrollSmoother.create({
     smooth: 1.5,
     effects: true,
@@ -147,7 +160,6 @@ const canonicalURL = new URL(
     normalizeScroll: true,
   });
 
-  // 2. Hero Animations
   const heroTitle = document.querySelector('.gsap-hero-title');
   if (heroTitle) {
     CustomEase.create('smooth', 'M0,0 C0.25,0.1 0.25,1 1,1');
@@ -175,7 +187,6 @@ const canonicalURL = new URL(
       );
   }
 
-  // 3. Section Animations
   const sections = gsap.utils.toArray<HTMLElement>('.gsap-section');
   sections.forEach((section) => {
     gsap.from(section, {
@@ -191,7 +202,6 @@ const canonicalURL = new URL(
     });
   });
 
-  // 4. Experience Items Animations
   const items = gsap.utils.toArray<HTMLElement>('.gsap-experience-item');
   if (items.length > 0) {
     ScrollTrigger.batch(items, {
@@ -207,7 +217,6 @@ const canonicalURL = new URL(
     });
   }
 
-  // 5. Skill Badges Hover Animations
   const badges = document.querySelectorAll('.gsap-skill-badge');
   badges.forEach((badge) => {
     badge.addEventListener('mouseenter', () =>
