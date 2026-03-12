@@ -37,9 +37,16 @@ const canonicalURL = new URL(
           type: 'website',
           image: image || 'https://jouribe.dev/og-image.webp',
         },
+        optional: {
+          siteName: 'Jorge O. Uribe',
+          description: description,
+        },
       }}
       twitter={{
         card: 'summary_large_image',
+        title: title,
+        description: description,
+        image: image || 'https://jouribe.dev/og-image.webp',
       }}
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
