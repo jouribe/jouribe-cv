@@ -12,6 +12,8 @@ const {
   description = 'Jorge O. Uribe - Full-Stack Software Engineer Portfolio',
   image,
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://jouribe.dev');
 ---
 
 <!doctype html>
@@ -24,6 +26,7 @@ const {
     <SEO
       title={title}
       description={description}
+      canonical={canonicalURL.href}
       openGraph={{
         basic: {
           title: title,
