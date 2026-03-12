@@ -32,14 +32,14 @@ The project has the following directory structure:
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run format`          | Formats the codebase using Prettier              |
-| `npm run lint`            | Inspects the code for issues using ESLint        |
+| Command           | Action                                       |
+| :---------------- | :------------------------------------------- |
+| `npm install`     | Installs dependencies                        |
+| `npm run dev`     | Starts local dev server at `localhost:4321`  |
+| `npm run build`   | Build your production site to `./dist/`      |
+| `npm run preview` | Preview your build locally, before deploying |
+| `npm run format`  | Formats the codebase using Prettier          |
+| `npm run lint`    | Inspects the code for issues using ESLint    |
 
 ## ✨ Features
 
@@ -50,4 +50,5 @@ All commands are run from the root of the project, from a terminal:
 - **Modern Aesthetics:** Tailored color palette with subtle borders, gradients, and glowing effects.
 
 ---
-*Built with [Astro](https://astro.build) 🚀*
+
+_Built with [Astro](https://astro.build) 🚀_
