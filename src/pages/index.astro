@@ -24,6 +24,8 @@ const data = {
   github: 'https://github.com/jouribe',
   summary:
     'Full-Stack Software Engineer with extensive experience designing and building scalable web applications, enterprise platforms, and data-driven systems. Strong expertise in backend architecture using .NET, PHP (Laravel), and SQL databases, complemented by modern frontend frameworks and DevOps workflows.',
+  seoDescription:
+    'Full-Stack Software Engineer with expertise in scalable web apps, enterprise platforms, and backend architecture using .NET, PHP, and SQL databases.',
   experience: [
     {
       company: 'Atomikal',
@@ -120,7 +122,28 @@ const data = {
 };
 ---
 
-<Layout title={`${data.name} | ${data.title}`} description={data.summary}>
+<Layout
+  title={`${data.name} | ${data.title}`}
+  description={data.seoDescription}
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      name: data.name,
+      alternateName: 'jouribe',
+      url: 'https://jouribe.dev',
+      image: 'https://jouribe.dev/profile.jpg',
+      sameAs: ['https://github.com/jouribe'],
+      jobTitle: 'Full-Stack Developer & Software Architect',
+      worksFor: {
+        '@type': 'Organization',
+        name: 'JL Labs',
+      },
+      description: data.seoDescription,
+    })}
+  />
   <main class="animate-in fade-in duration-700">
     <Hero
       name={data.name}
