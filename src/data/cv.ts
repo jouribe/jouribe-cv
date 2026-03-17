@@ -7,10 +7,12 @@ export const cv: CVData = {
   email: 'jorge@jouribe.dev',
   phone: '+51 972 794 964',
   github: 'https://github.com/jouribe',
+  linkedin: 'https://www.linkedin.com/in/jouribe',
+  twitter: 'https://x.com/jouribepe',
   summary:
-    'Full-Stack Software Engineer with extensive experience designing and building scalable web applications, enterprise platforms, and data-driven systems. Strong expertise in backend architecture using .NET, PHP (Laravel), and SQL databases, complemented by modern frontend frameworks and DevOps workflows.',
+    'Full-Stack Software Engineer with 15+ years designing and building scalable enterprise systems using .NET, Laravel, and SQL databases. Expertise in microservices architecture, REST API design, and high-traffic platform development. Former IT Director and team lead. Based in Lima, Peru — available globally for remote opportunities.',
   seoDescription:
-    'Full-Stack Software Engineer with expertise in scalable web apps, enterprise platforms, and backend architecture using .NET, PHP, and SQL databases.',
+    'Full-Stack Software Engineer with 15+ years of expertise in .NET, Laravel, microservices, and scalable enterprise platforms. Based in Lima, Peru — open to global remote roles.',
   experience: [
     {
       company: 'Atomikal',

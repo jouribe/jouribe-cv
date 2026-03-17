@@ -26,6 +26,8 @@ export interface CVData {
   email: string;
   phone: string;
   github: string;
+  linkedin: string;
+  twitter?: string;
   summary: string;
   seoDescription: string;
   experience: Experience[];

@@ -1,6 +1,7 @@
 ---
 import { SEO } from 'astro-seo';
 import SpeedInsights from '@vercel/speed-insights/astro';
+import { cv } from '@data/cv';
 
 interface Props {
   title: string;
@@ -10,7 +11,7 @@ interface Props {
 
 const {
   title,
-  description = 'Jorge O. Uribe - Full-Stack Software Engineer Portfolio',
+  description = cv.seoDescription,
   image,
 } = Astro.props;
 
@@ -21,12 +22,19 @@ const canonicalURL = new URL(
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="geo.region" content="PE-LIM" />
+    <meta name="geo.country" content="PE" />
+    <meta name="geo.placename" content="Lima, Peru" />
     <SEO
       title={title}
       description={description}
@@ -98,16 +106,28 @@ const canonicalURL = new URL(
       set:html={JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'Person',
-        name: 'Jorge O. Uribe',
+        name: cv.name,
         alternateName: 'jouribe',
         url: 'https://jouribe.dev',
         image: 'https://jouribe.dev/profile.jpg',
-        sameAs: ['https://github.com/jouribe'],
-        jobTitle: 'Full-Stack Developer & Software Architect',
+        sameAs: [cv.github, cv.linkedin, cv.twitter],
+        jobTitle: cv.title,
         worksFor: {
           '@type': 'Organization',
           name: 'JL Labs',
         },
+        alumniOf: {
+          '@type': 'EducationalOrganization',
+          name: cv.education.institution,
+          url: 'https://uni.edu.pe',
+        },
+        address: {
+          '@type': 'PostalAddress',
+          addressCountry: 'PE',
+          addressRegion: 'Lima',
+          addressLocality: 'Lima',
+        },
+        knowsLanguage: ['es-PE', 'en'],
         description: description,
       })}
     />

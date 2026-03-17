@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://jouribe.dev/sitemap-index.xml
