@@ -12,8 +12,8 @@ export function initSmoothScroll(): void {
   ScrollSmoother.create({
     smooth: 1.5,
     effects: true,
-    smoothTouch: 0.1,
-    normalizeScroll: true,
+    // normalizeScroll removed: causes CLS (layout recalculations)
+    // smoothTouch removed: delays INP on mobile by intercepting touch events
   });
 }
 
@@ -24,7 +24,9 @@ export function initHeroAnimations(): void {
   CustomEase.create(EASE_NAME, EASE_CURVE);
   const tl = gsap.timeline({ defaults: { ease: EASE_NAME } });
 
-  tl.from('.gsap-hero-title', { y: 30, opacity: 0, duration: 0.8, delay: 0.2 })
+  // LCP fix: hero title animates only via transform (y), never opacity:0
+  // This keeps the H1 visible from first paint so Google can measure LCP immediately
+  tl.from('.gsap-hero-title', { y: 30, duration: 0.8, delay: 0.2 })
     .from('.gsap-hero-subtitle', { y: 20, opacity: 0, duration: 0.8 }, '-=0.6')
     .from(
       '.gsap-hero-contact',
