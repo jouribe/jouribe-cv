@@ -28,21 +28,12 @@ import { cv } from '@data/cv';
 
     <Section title="Core Skills">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {
-          cv.skills.map((skill) => (
-            <SkillBadge category={skill.category} skills={skill.items} />
-          ))
-        }
+        {cv.skills.map((skill) => <SkillBadge category={skill.category} skills={skill.items} />)}
       </div>
     </Section>
 
-    <div
-      class="grid grid-cols-1 md:grid-cols-2 container mx-auto max-w-4xl last:border-0 h-full"
-    >
-      <Section
-        title="Education"
-        className="border-r border-gray-500/40 border-b-0"
-      >
+    <div class="grid grid-cols-1 md:grid-cols-2 container mx-auto max-w-4xl last:border-0 h-full">
+      <Section title="Education" className="border-r border-gray-500/40 border-b-0">
         <div>
           <h3 class="text-xl font-bold text-foreground">
             {cv.education.degree}

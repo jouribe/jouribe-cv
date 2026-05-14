@@ -11,14 +11,7 @@ interface Props {
   color?: ExperienceColor;
 }
 
-const {
-  company,
-  title,
-  date,
-  description,
-  skills = [],
-  color = 'default',
-} = Astro.props;
+const { company, title, date, description, skills = [], color = 'default' } = Astro.props;
 
 const theme = colorMap[color] ?? colorMap.default;
 ---

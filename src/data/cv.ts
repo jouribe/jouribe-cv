@@ -70,7 +70,11 @@ export const cv: CVData = {
         'Developed personnel and logistics systems',
         'Maintained enterprise backend applications',
       ],
-      skills: ['Enterprise Software', 'Logistics Systems', 'Backend Maintenance'],
+      skills: [
+        'Enterprise Software',
+        'Logistics Systems',
+        'Backend Maintenance',
+      ],
       color: 'mauve',
     },
   ],

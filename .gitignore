@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # Vercel
 .vercel/
+
+# Added by code-review-graph
+.code-review-graph/
