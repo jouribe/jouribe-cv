@@ -5,7 +5,7 @@ export const cv: CVData = {
   title: 'Full-Stack Software Engineer',
   location: 'Lima, Peru',
   email: 'jorge@jouribe.dev',
-  phone: '+51 972 794 964',
+  phone: '+51 906 686 970',
   github: 'https://github.com/jouribe',
   linkedin: 'https://www.linkedin.com/in/jouribe',
   twitter: 'https://x.com/jouribepe',
